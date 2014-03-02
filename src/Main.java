@@ -10,31 +10,35 @@ public class Main {
         public Point(double x, double y) {
             this.x = x;
             this.y = y;
+
         }
 
         public  Point() {
             this(0, 0);     // вызов конструктора с двумя параметрами
         }
 
+        //
+//        public double distanceToZeroX( Point A){                // distance to zero by x-axis
+//            double coordX = Math.abs(A.x);
 //
-        public double distanceToZeroX( Point A){                // distance to zero by x-axis
-            double coordX = Math.abs(A.x);
-
-            return coordX;
+//            return coordX;
+//        }
+        public double distanceToZero(){
+            double disToZero = Math.sqrt((Math.pow(getX(),2))+(Math.pow(getY(),2)));
+            return disToZero;
         }
-
-        public double distanceToZeroY( Point A){                // distance to zero by y-axis
-            double coordY = Math.abs(A.y);
-
-            return coordY;
-        }
+//        public double distanceToZeroY( Point A){                // distance to zero by y-axis
+//            double coordY = Math.abs(A.y);
+//
+//            return coordY;
+//        }
 //        public Point shiftX(Point A, double shift){                 //  point Shifting by x-axis
 //            double ShiftX = A.x + shift;
 //            return new Point(ShiftX,A.y);
 //
 //        }
 
-//        public Point shiftY(Point A, double shift){                     //  point Shifting by y-axis
+        //        public Point shiftY(Point A, double shift){                     //  point Shifting by y-axis
 //            double ShiftX = A.x + shift;
 //            return new Point(ShiftX,A.x);
 //
@@ -54,13 +58,19 @@ public class Main {
 
         }
 
-        public double getX(Point A){                                //  coordinates of the Point
-            double getX = A.x;
-            return getX;
+        ////        public double getX(Point A){                                //  coordinates of the Point
+////            double getX = A.x;
+////            return getX;
+////        }
+        public double getX(){
+            return this.x;
         }
-        public double getY(Point A){                                //  coordinates of the Point
-            double getY = A.y;
-            return getY;
+        ////        public double getY(Point A){                                //  coordinates of the Point
+////            double getY = A.y;
+////            return getY;
+////        }
+        public double getY(){
+            return this.y;
         }
 
         public double distanceX (Point A, Point B){             // distance between two points X-axis
@@ -71,13 +81,16 @@ public class Main {
             double distanceY = Math.abs(A.y - B.y);
             return distanceY;
         }
-
+//        public double static distanceAtoB(Point A,Point B){
+//            double disAtoB = Math.sqrt((Math.pow((A.getX()-B.getX()),2)+(Math.pow((A.getY() - B.getY()),2))));
+//            return disAtoB;
+//        }
         public double howLongToA_X(Point A){
-            double HowLong = Math.abs(this.x - A.x);                // distance from A point to B Point
+            double HowLong = Math.abs(this.x - A.x);                // distance from A point to B Point X-axis
             return HowLong;
         }
         public double howLongToA_Y(Point A){
-            double HowLong = Math.abs(this.y - A.y);                    // distance from A point to B Point
+            double HowLong = Math.abs(this.y - A.y);                    // distance from A point to B Point Y-axis
             return HowLong;
         }
 
@@ -85,10 +98,12 @@ public class Main {
     public static  void main (String [] args ){
         Point A = new Point(-2,3);
         Point B = new Point(11,5);
-        System.out.println(A.getX(A));
-        System.out.println(A.getY(A));
+        System.out.println(A.getX());
+        System.out.println(A.getY());
         A.shiftY(A, 5);
-        System.out.println(A.getY(A));
+        System.out.println();
+        System.out.println(A.distanceToZero());
+        System.out.println(A.getY());
         System.out.println(A.howLongToA_X(B));
         System.out.println(A.distanceX(A, B));
 
